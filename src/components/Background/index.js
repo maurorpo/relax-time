@@ -1,14 +1,21 @@
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-
 const bgAnimation = keyframes`
-    0%{background-position:0% 62%}
-    50%{background-position:100% 39%}
-    100%{background-position:0% 62%}
+    0%{
+      background-position:0% 200%
+    }
+    50%{
+      background-position: 100% 0%
+    }
+    100%{
+      background-position:0% 200%
+    }
   
 `;
+
 const FullScream = styled.section`
-  background: linear-gradient(90deg, #${props => props.firstColor} 10%, #${props => props.secondColor} ) 74%;
+  background: linear-gradient(90deg, ${props => props.firstColor} 10%, ${props => props.secondColor} ) 74%;
   position: absolute;
   background-size: 400% 400%;
   top: 0;
@@ -20,6 +27,8 @@ const FullScream = styled.section`
 `;
 
 const Background = ({firstColor, secondColor}) => {
+
+
 
   return(
     <FullScream firstColor={firstColor} secondColor={secondColor} >

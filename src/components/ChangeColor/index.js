@@ -1,28 +1,53 @@
-import styled from 'styled-components';
-import React from 'react';
-import { ColorPicker, useColor  } from "react-color-palette";
+import React , { useState } from 'react';
+import Change from './styledChange';
+import { ChromePicker } from 'react-color';
+
+// Styles
 import "react-color-palette/lib/css/styles.css";
 
-const Change = styled.section`
-  position: absolute;
-`;
+// Buttons
+import Button from '../BtnNav/styledBtns'
 
-const ChangeColor = ({ changeColors1, changeColors2 }) => {
-  const [color, setColor] = useColor("hex", "#121212");
 
-  changeColors1(color)
+const ChangeColor = ({ changeColors1, changeColors2, firstColor, secondColor }) => {
 
-  const prueba = (val) => {
-    console.log(val)
+  const [pickColor1, setPickColor1] = useState(false);
+  const [pickColor2, setPickColor2] = useState(false);
+
+  const showPalete1 = () => {
+    if (pickColor1) {
+      setPickColor1(false)
+
+      
+    } else {
+      setPickColor1(true)
+      if (pickColor2) {
+        setPickColor2(false)
+      }
+    }
+  }
+
+  const showPalete2 = () => {
+    if (pickColor2) {
+      setPickColor2(false)
+    
+    } else {
+      setPickColor2(true)
+      if (pickColor1) {
+        setPickColor1(false)
+      }
+    }
   }
 
   return(
     <Change>
-      {/* <ColorPicker width={256} height={156} color={color} onChange={() => prueba(setColor)} hideHSV dark /> */}
-      <form>
-        <input type='text' id="color1" maxLength="6" onChange={(e) => changeColors1(e.target.value)} ></input>
-        <input type='text' id="color2" maxLength="6" onChange={(e) => changeColors2(e.target.value)}></input>
-      </form>
+      <div>
+        <Button onClick={showPalete1} >Color 1</Button>
+        <Button onClick={showPalete2}>Color 2</Button>
+      </div>
+      {pickColor1 ? <ChromePicker color={firstColor} onChange={ (value) => changeColors1(value.hex) } /> : null}
+      {pickColor2 ? <ChromePicker color={secondColor} onChange={ (value) => changeColors2(value.hex) } /> : null}
+     
     </Change>
   )
 }
