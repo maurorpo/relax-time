@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {useState } from 'react';
+import Background from './components/Background';
+import ChangeColor from './components/ChangeColor';
 
 function App() {
+  
+
+  const [firstColor, setFirstColor] = useState('5b45ee')
+  const [secondColor, setsecondColor] = useState('8c2bac')
+
+  const changeColors1 =(value) => {
+    if (value.length === 6) {
+      setFirstColor(value)
+    }
+  }
+
+  const changeColors2 =(value) => {
+    if (value.length === 6) {
+      setsecondColor(value)
+    }
+  }  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Background firstColor={firstColor} secondColor={secondColor}  />
+      <ChangeColor changeColors1={changeColors1} changeColors2={changeColors2}/>
     </div>
   );
 }
