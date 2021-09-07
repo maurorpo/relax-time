@@ -1,6 +1,9 @@
 import React , {useState } from 'react';
+
+// Components
 import Background from './components/Background';
 import ChangeColor from './components/ChangeColor';
+import IframeSpotify from './components/IframeSpotify';
 
 function App() {
   
@@ -26,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <Background firstColor={firstColor} secondColor={secondColor}  />
+      <IframeSpotify />
       <ChangeColor firstColor={firstColor} secondColor={secondColor} changeColors1={changeColors1} changeColors2={changeColors2} />
     </div>
   );
