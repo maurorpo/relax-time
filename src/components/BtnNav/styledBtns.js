@@ -5,8 +5,11 @@ const Button = styled.button`
   cursor: pointer;
   color: #333333;
   text-transform: uppercase;
-  padding: 10px 20px;
+  padding: 13px 30px;
   border-radius: 50px;
+  font-family: 'Avenir LT Std Black';
+  text-transform: uppercase;
+  letter-spacing: 2px;
 `;
 
 export default Button

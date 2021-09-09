@@ -11,7 +11,6 @@ const bgAnimation = keyframes`
     100%{
       background-position:0% 200%
     }
-  
 `;
 
 const FullScream = styled.section`

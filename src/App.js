@@ -4,6 +4,16 @@ import React , {useState } from 'react';
 import Background from './components/Background';
 import ChangeColor from './components/ChangeColor';
 import IframeSpotify from './components/IframeSpotify';
+import Intro from './components/Intro'
+
+// StyledComponents
+import Nav from './components/Nav/styledNav'
+
+// Fonts
+import './assets/fonts/style.css'
+
+// Basics
+import './index.css'
 
 function App() {
   
@@ -13,24 +23,24 @@ function App() {
 
   const changeColors1 =(value) => {
     if (value.length === 7) {
-      console.log(value)
       setFirstColor(value)
     }
   }
 
   const changeColors2 =(value) => {
-    console.log(value)
     if (value.length === 7) {
       setsecondColor(value)
     }
   }
 
-
   return (
     <div className="App">
       <Background firstColor={firstColor} secondColor={secondColor}  />
-      <IframeSpotify />
-      <ChangeColor firstColor={firstColor} secondColor={secondColor} changeColors1={changeColors1} changeColors2={changeColors2} />
+      <Intro />
+      <Nav>
+        <ChangeColor firstColor={firstColor} secondColor={secondColor} changeColors1={changeColors1} changeColors2={changeColors2} />
+        <IframeSpotify />
+      </Nav>
     </div>
   );
 }

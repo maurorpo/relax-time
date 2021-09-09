@@ -1,0 +1,30 @@
+.content-iframe {
+  padding: 20px;
+  text-align: center;
+}
+
+.itemMenu iframe {
+  position: relative;
+  top: 7px
+}
+
+.content-iframe h2 {
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.content-iframe button {
+  margin-top: 20px;
+}
+
+.content-iframe input {
+  display: block;
+  height: 32px;
+  padding-left: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 11px;
+  box-shadow: 0px 1px 4px -1px #686868;
+  outline: none !important;
+}

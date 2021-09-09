@@ -8,7 +8,7 @@
 }
 
 @font-face {
-    font-family: 'Avenir LT Std';
+    font-family: 'Avenir LT Std Book';
     src: url('AvenirLTStd-Book.woff2') format('woff2'),
         url('AvenirLTStd-Book.woff') format('woff');
     font-weight: normal;
@@ -17,7 +17,7 @@
 }
 
 @font-face {
-    font-family: 'Avenir LT Std';
+    font-family: 'Avenir LT Std Black';
     src: url('AvenirLTStd-Black.woff2') format('woff2'),
         url('AvenirLTStd-Black.woff') format('woff');
     font-weight: 900;
